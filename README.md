@@ -1,2 +1,2 @@
 # alopeciacare
-Projeto pessoal para acompanhar evolução da alopecia e resposta ao tratamento ao longo do tempo.
+Personal project to track hair loss progression and treatment response over time.
