@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+
+        body{
+            display: flex;
+        }
+
+        .menunav{
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-around;
+            background: #F9F9F9;
+            border: 1px solid rgba(0, 0, 0, 0.075);
+            padding-left: 8px ;
+            
+            width: 100%;
+            max-width: 10em;
+            height: 100vh ;
+
+        }
+
+        .menunav p {
+            font-size: 25px;
+            color: green;
+            font-weight: bold;
+        }
+
+
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            
+            gap: 70px;
+
+            list-style: none;
+
+            font-size: 24px;
+            color: #0000007e;
+
+        
+        }
+
+        nav ul li {
+            cursor: pointer;
+        }
+
+        .sessaobutton {
+            background-color: #50BF62;
+
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+
+            border: 0;
+            padding: 8px;
+
+            width: 98px;
+
+            cursor: pointer;
+        }
+
+
+        main{
+            padding-left: 48px;
+        }
+
+        .section {
+            color: #0000004c;
+
+            padding-top: 28px;
+
+            padding-bottom: 28px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .section img {
+            width: 40px;
+            height: 40px;
+
+            cursor: pointer;
+        }
+
+        .sidebar ul{
+            list-style: none;
+
+            display: flex;
+            gap: 28px;
+        }
+
+        .sidebar ul li {
+            width: 328px;
+            height: 450px;
+            background-color: #F3F3F3;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <div class="menunav">
+        <p>
+            <span style="color: rgb(19, 160, 160);">hair</span>Health+
+        </p>
+        <nav>
+
+            <ul>
+                <li>Histórico</li>
+                <li>Relatório</li>
+                <li>Tratamento</li>
+            </ul>
+
+
+        </nav>
+
+
+        <button class="sessaobutton">+ Sessão</button>
+    </div>
+
+
+    <main>
+
+
+        <div class="section">
+
+            <div>
+                <h1>Últimas sessões</h1>
+                <p>2025</p>
+            </div>
+
+            <img src="{{url_for('static', filename='images/filtro.png')}}" alt="">
+            
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+
+            </ul>
+        </div>
+
+    </main>
+
+
+
+</body>
+</html>
