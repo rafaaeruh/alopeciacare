@@ -48,7 +48,7 @@
             list-style: none;
 
             font-size: 24px;
-            color: #0000007e;
+            color: #0000004d;
 
         
         }
@@ -80,6 +80,7 @@
         .section {
             color: #0000004c;
 
+
             padding-top: 28px;
 
             padding-bottom: 28px;
@@ -88,6 +89,15 @@
             justify-content: space-between;
             align-items: center;
         }
+
+        .section h1 {
+            font-size: 35px;
+        }
+
+        .section p {
+            font-size: 20px;
+        }
+
         
         .section img {
             width: 40px;
@@ -109,6 +119,19 @@
             background-color: #F3F3F3;
         }
 
+        .slideside {
+            display: flex;
+            align-items: center;
+        }
+
+        .slideside img {
+            
+            width: 50px;
+            height: 50px;
+
+            cursor: pointer;
+        
+        }
 
 
     </style>
@@ -123,7 +146,7 @@
         <nav>
 
             <ul>
-                <li>Histórico</li>
+                <li style="color:#000000e8;;">Histórico</li>
                 <li>Relatório</li>
                 <li>Tratamento</li>
             </ul>
@@ -149,18 +172,29 @@
             <img src="{{url_for('static', filename='images/filtro.png')}}" alt="">
             
         </div>
-        <div class="sidebar">
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
 
+        <div class="slideside">
+
+            <img src="{{url_for('static', filename='images/setaesq.png')}}" alt="setaesq">
+            
+            <div class="sidebar">
+                <ul>
+                    <li></li>
+                <li></li>
+                <li></li>
+                
             </ul>
         </div>
+            
+            <img style="transform: rotate(180deg);" src="{{url_for('static', filename='images/setaesq.png')}}" alt="setadir">
+
+
+
+    </div>
 
     </main>
-
-
-
+    
+    
+    
 </body>
 </html>
