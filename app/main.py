@@ -1,11 +1,13 @@
 #classe Python  que representa a aplicação web
 from flask import Flask
 from routes.history import history_bp
-
+from routes.newsession import session_bp
 # Instância da classe que represente a aplicação web
 app = Flask(__name__)
 
 app.register_blueprint(history_bp)
+app.register_blueprint(session_bp)
+
 
 @app.route("/")
 def home():

@@ -6,11 +6,16 @@ ROOT_DIR =  os.path.dirname(BASE_DIR)
 
 DB_PATH = os.path.join(ROOT_DIR, "database.db")
 
+
+
+
+
+
 conn = sq.connect(DB_PATH)
 
 cursor = conn.cursor()
 
-
+## SE TABELA NÃO EXISTIR
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS sessoes (
                id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -28,11 +33,18 @@ cursor.execute('''
 conn.commit()
 
 
-nova_sessao = ("011","Janeiro", "01/01/2026", "minoxidil", "frontal","imagempath","estavel","taltal")
 
-cursor.execute('INSERT INTO sessoes VALUES (?,?,?,?,?,?,?,?)',nova_sessao)
+def registrar_sessao(id,mes,data,tratamento,area,imagem_path,status,obs):
+    conn = sq.connect(DB_PATH)
+    cursor = conn.cursor()
 
-conn.commit()
+    cursor.execute("INSERT INTO sessoes VALUES (?,?,?,?,?,?,?,?)", (id,mes,data,tratamento,area,imagem_path,status,obs))
+
+    conn.commit()
+    conn.close()
+
+
+registrar_sessao(27,"Agosto","19/08/2026","Biotina","Linha frontal","/home/Images","estável","nada a declarar")
 
 cursor.execute('SELECT * FROM sessoes')
 print(cursor.fetchall())
