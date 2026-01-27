@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+
+        textarea{
+            width: 350px;
+        }
+
+        fieldset {
+            width: 300px;
+        }
+
+        .estado span {
+            display: flex;
+        }
+
+        .details {
+            width: 400px;
+        }
+    </style>
 </head>
 <body>
 
-    <button>Voltar</button>
+
+    <a href="{{url_for('history.history')}}">
+        <button>Voltar</button>
+    </a>
+    
     <br> <br>
     <div>
         <label for="frontal">linha frontal</label>
@@ -26,16 +49,133 @@
     </div>
 
     <br>
-    <div>
+    <div class="details">
         <label for="tratamento">Tratamento atual</label>
         <select name="" id="tratamento">
-            <option value="formulaA">Fórmula A</option>
+        <option value="formulaA">Fórmula A</option>
 
         </select>
-    </div>
 
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, praesentium nostrum. Obcaecati vero voluptatem reiciendis nihil itaque delectus temporibus, tenetur corrupti dolore nobis in voluptas hic deleniti, commodi voluptatum maiores.</p>
+
+    </div>
+    <br>
     <div>
-        <label for="">Estado</label>
+        
+        <div class="estado" style="display: flex; flex-direction: column;">
+           
+            <fieldset>
+
+                <legend>Linha frontal</legend>
+                
+                <span>
+                    <input name="frontalr" type="radio" id="frontalop1">
+                    <label for="frontalop1">piorando rapidamente</label>
+                </span>
+                
+                <span>
+                    <input name="frontalr" type="radio" id="frontalop2">
+                    <label for="frontalop2">melhorando lentamente</label>
+                </span>
+                
+                <span>
+                    <input name="frontalr" type="radio" id="frontalop3">
+                    <label for="frontalop3">melhorando</label>
+                </span>
+                
+                <span>
+                    <input name="frontalr" type="radio" id="frontalop4">
+                    <label for="frontalop4">estável</label>
+                </span>
+                
+            </fieldset>
+
+            <fieldset>
+
+                <legend>Entradas</legend>
+                
+                <span>
+                    <input name="entradasr" type="radio" id="entradasop1">
+                    <label for="entradasop1">piorando rapidamente</label>
+                </span>
+                
+                <span>
+                    <input name="entradasr" type="radio" id="entradasop2">
+                    <label for="entradasop2">melhorando lentamente</label>
+                </span>
+                
+                <span>
+                    <input name="entradasr" type="radio" id="entradasop3">
+                    <label for="entradasop3">melhorando</label>
+                </span>
+                
+                <span>
+                    <input name="entradasr" type="radio" id="entradasop4">
+                    <label for="entradasop4">estável</label>
+                </span>
+                
+            </fieldset>
+
+            <fieldset>
+
+                <legend>Mid Scalp</legend>
+                
+                <span>
+                    <input name="mid_scalpr" type="radio" id="mid_scalpop1">
+                    <label for="mid_scalpop1">piorando rapidamente</label>
+                </span>
+                
+                <span>
+                    <input name="mid_scalpr" type="radio" id="mid_scalpop2">
+                    <label for="mid_scalpop2">melhorando lentamente</label>
+                </span>
+                
+                <span>
+                    <input name="mid_scalpr" type="radio" id="mid_scalpop3">
+                    <label for="mid_scalpop3">melhorando</label>
+                </span>
+                
+                <span>
+                    <input name="mid_scalpr" type="radio" id="mid_scalpop4">
+                    <label for="mid_scalpop4">estável</label>
+                </span>
+                
+            </fieldset>
+
+
+
+            <fieldset>
+
+                <legend>Coroa</legend>
+                
+                <span>
+                    <input name="coroar" type="radio" id="coroap1">
+                    <label for="coroap1">piorando rapidamente</label>
+                </span>
+                
+                <span>
+                    <input name="coroar" type="radio" id="coroap2">
+                    <label for="coroap2">melhorando lentamente</label>
+                </span>
+                
+                <span>
+                    <input name="coroar" type="radio" id="coroap3">
+                    <label for="coroap3">melhorando</label>
+                </span>
+                
+                <span>
+                    <input name="coroar" type="radio" id="coroap4">
+                    <label for="coroap4">estável</label>
+                </span>
+                
+            </fieldset>
+
+            <br>
+            <label for="Obs">Obs</label>
+            <textarea name="" id="Obs" rows="5" cols="12" placeholder="Observação"></textarea>
+
+            </div>
+
     </div>
 
 
