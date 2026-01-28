@@ -33,19 +33,25 @@
     
     <br> <br>
     <div>
-        <label for="frontal">linha frontal</label>
-        <input type="file" name="" id="frontal">
+
+        <form method="POST" enctype="multipart/form-data">
+            <label for="frontal">linha frontal</label>
+            <input type="file" name="photo_frontal" id="frontal">
         <br><br>
         <label for="entradas">entradas</label>
-        <input type="file" name="" id="entradas">
+        <input type="file" name="photo_entradas" id="entradas">
         <br><br>
 
         <label for="mid_scalp">mid_scalp</label>
-        <input type="file" name="" id="mid_scalp">
+        <input type="file" name="photo_midscalp" id="mid_scalp">
         <br><br>
 
         <label for="coroa">coroa</label>
-        <input type="file" name="" id="coroa">
+        <input type="file" name="photo_coroa" id="coroa">
+        <button type="submit">Enviar</button>
+
+    </form>
+
     </div>
 
     <br>
@@ -175,6 +181,8 @@
             <textarea name="" id="Obs" rows="5" cols="12" placeholder="Observação"></textarea>
 
             </div>
+
+        <button>Registrar Sessão</button>        
 
     </div>
 
