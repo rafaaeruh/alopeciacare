@@ -37,10 +37,15 @@ cursor.execute('''
 
 
 conn.commit()
-
-
-
-cursor.execute('SELECT * FROM sessoes')
-print(cursor.fetchall())
-
 conn.close()
+
+
+def registrar_sessao(data,tratamento,photo_frontal,photo_entradas,photo_midscalp, photo_coroa, frontal_estado, entradas_estado, midscalp_estado,coroa_estado,obs):
+
+    conn = sq.connect(DB_PATH)
+    cursor = conn.cursor()
+
+    cursor.execute(" INSERT INTO sessoes (data, tratamento, photo_frontal, photo_entradas, photo_midscalp, photo_coroa,frontal_area,entradas_area,midscalp_area,coroa_area,obs) VALUES (?,?,?,?,?,?,?,?,?,?,?)", (data,tratamento,photo_frontal,photo_entradas,photo_midscalp,photo_coroa,frontal_estado,entradas_estado, midscalp_estado, coroa_estado,obs))
+
+    conn.commit()
+    conn.close()
