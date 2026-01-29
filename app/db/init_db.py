@@ -6,11 +6,6 @@ ROOT_DIR =  os.path.dirname(BASE_DIR)
 
 DB_PATH = os.path.join(ROOT_DIR, "database.db")
 
-
-
-
-
-
 conn = sq.connect(DB_PATH)
 
 cursor = conn.cursor()
@@ -19,7 +14,7 @@ cursor = conn.cursor()
 cursor.execute('DROP TABLE IF EXISTS sessoes')
 
 conn.commit()
-
+ 
 ## SE TABELA NÃO EXISTIR
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS sessoes (
