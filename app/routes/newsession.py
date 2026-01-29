@@ -1,6 +1,8 @@
-from flask import Flask, Blueprint, render_template, request
+from flask import Flask, Blueprint, render_template, request, current_app
+from db.init_db import registrar_sessao
 import datetime
 import os 
+
 
 
 session_bp = Blueprint("session", __name__,url_prefix="/newsession")
@@ -25,7 +27,7 @@ def session():
         for i,file in enumerate(arquivos):
             if file and file.filename != "":
                 filename = names[i] + "_" + nowdata + ".jpg"
-                upload_path = os.path.join("static", "uploads", filename) 
+                upload_path = os.path.join(current_app.root_path ,"static", "uploads", filename) 
                 paths.append(upload_path)
                 file.save(upload_path)
 
@@ -45,12 +47,10 @@ def session():
         observacao = request.form.get("obs")
 
 
-
-
-        print (tratamento, frontal,entradas,mid_scalpr,coroa, observacao, nowdata)
-            
-
-
+        try:
+            registrar_sessao(data=nowdata,tratamento=tratamento,photo_frontal=paths[0],photo_entradas=paths[1],photo_midscalp=paths[2],photo_coroa=paths[3], frontal_estado=frontal,entradas_estado=entradas,midscalp_estado=mid_scalpr,coroa_estado=coroa, obs=observacao)
+        except:
+            print("Erro inesperado!")
 
     return  render_template("newsession.html")
 

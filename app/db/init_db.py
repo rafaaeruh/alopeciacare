@@ -10,10 +10,8 @@ conn = sq.connect(DB_PATH)
 
 cursor = conn.cursor()
 
-
-cursor.execute('DROP TABLE IF EXISTS sessoes')
-
-conn.commit()
+#cursor.execute("DROP TABLE sessoes")
+#conn.commit()
  
 ## SE TABELA NÃO EXISTIR
 cursor.execute('''
@@ -37,7 +35,20 @@ cursor.execute('''
 
 
 conn.commit()
+
+cursor.execute("SELECT * FROM sessoes")
+
+print(cursor.fetchall())
+
+
 conn.close()
+
+
+
+
+
+
+
 
 
 def registrar_sessao(data,tratamento,photo_frontal,photo_entradas,photo_midscalp, photo_coroa, frontal_estado, entradas_estado, midscalp_estado,coroa_estado,obs):
@@ -49,3 +60,6 @@ def registrar_sessao(data,tratamento,photo_frontal,photo_entradas,photo_midscalp
 
     conn.commit()
     conn.close()
+
+
+
