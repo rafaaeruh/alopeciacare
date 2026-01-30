@@ -124,6 +124,12 @@
             align-items: center;
         }
 
+
+        .slideside button {
+            border: #00000000;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
         .slideside img {
             
             width: 50px;
@@ -177,18 +183,32 @@
 
         <div class="slideside">
 
-            <img src="{{url_for('static', filename='images/setaesq.png')}}" alt="setaesq">
+            <form method="POST" enctype="multipart/form-data">
+                <button type="submit" name="acao" value="esq">
+                    <img src="{{url_for('static', filename='images/setaesq.png')}}" alt="setaesq">
+                </button>
+
+            </form>
+
             
             <div class="sidebar">
                 <ul>
-                    <li></li>
-                <li></li>
-                <li></li>
-                
-            </ul>
+
+                    {%  for fruta in range(index-3, index) %}
+                        <li> {{frutas[fruta]}} </li>
+
+                    {% endfor %}
+
+                </ul>
+
+
         </div>
             
-            <img style="transform: rotate(180deg);" src="{{url_for('static', filename='images/setaesq.png')}}" alt="setadir">
+            <form method="POST" enctype="multipart/form-data">
+                <button type="submit" name="acao" value="dir">
+                    <img style="transform: rotate(180deg);" src="{{url_for('static', filename='images/setaesq.png')}}" alt="setadir">
+                </button>
+            </form>
 
 
 
