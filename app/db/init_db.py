@@ -10,8 +10,8 @@ conn = sq.connect(DB_PATH)
 
 cursor = conn.cursor()
 
-#cursor.execute("DROP TABLE sessoes")
-#conn.commit()
+# cursor.execute("DROP TABLE sessoes")
+# conn.commit()
  
 ## SE TABELA NÃO EXISTIR
 cursor.execute('''

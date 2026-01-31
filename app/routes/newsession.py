@@ -21,14 +21,14 @@ def session():
         file4 = request.files["photo_coroa"]
         arquivos = [file1,file2,file3,file4]
         names = ["frontal","entradas","mid_scalp","coroa"]
+        pathsx = []
         paths = []
-
 
         for i,file in enumerate(arquivos):
             if file and file.filename != "":
                 filename = names[i] + "_" + nowdata + ".jpg"
                 upload_path = os.path.join(current_app.root_path ,"static", "uploads", filename) 
-                paths.append(upload_path)
+                pathsx.append(upload_path)
                 file.save(upload_path)
 
         # Formula
@@ -46,6 +46,10 @@ def session():
 
         observacao = request.form.get("obs")
 
+
+        for path in pathsx:
+            url = path.split("/static")[-1]
+            paths.append(url)
 
         try:
             registrar_sessao(data=nowdata,tratamento=tratamento,photo_frontal=paths[0],photo_entradas=paths[1],photo_midscalp=paths[2],photo_coroa=paths[3], frontal_estado=frontal,entradas_estado=entradas,midscalp_estado=mid_scalpr,coroa_estado=coroa, obs=observacao)

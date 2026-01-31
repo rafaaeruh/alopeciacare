@@ -31,8 +31,4 @@ def history():
                 indice += 1
                 print(indice)
 
-
-
-
-
     return render_template("history.html", sessoes = sessoes_lista, index= indice) 

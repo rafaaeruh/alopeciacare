@@ -203,12 +203,14 @@
             <div class="sidebar">
                 <ul>
 
-                    {%  for sessao in range(index-3, sessoes|length) %}
+                    {%  for i in range(index-3, sessoes|length) %}
 
-                        <li> {{sessoes[sessao]}}
-                           <img src="" alt="">
-                           <p>data</p>
-                           <p>formula</p> 
+                        <li>
+                            
+                            {{sessoes[i][0]}} <br>
+                           <img src="{{url_for('static', filename=sessoes[i][0]|trim)}}" alt="">
+                           <p> {{sessoes[i][1]}} </p>
+                           <p> {{sessoes[i][2]}} </p>
                         </li>
 
                     {% endfor %}
