@@ -139,6 +139,15 @@
         
         }
 
+        .slideside {
+            width: 1200px;
+            border: 1px solid;
+
+            display: flex;
+
+            justify-content: space-between;
+        }
+
 
     </style>
 </head>
@@ -194,8 +203,13 @@
             <div class="sidebar">
                 <ul>
 
-                    {%  for fruta in range(index-3, index) %}
-                        <li> {{frutas[fruta]}} </li>
+                    {%  for sessao in range(index-3, sessoes|length) %}
+
+                        <li> {{sessoes[sessao]}}
+                           <img src="" alt="">
+                           <p>data</p>
+                           <p>formula</p> 
+                        </li>
 
                     {% endfor %}
 

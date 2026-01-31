@@ -32,21 +32,23 @@ cursor.execute('''
 
 ''')
 
-
-
 conn.commit()
-
-cursor.execute("SELECT * FROM sessoes")
-
-print(cursor.fetchall())
-
-
 conn.close()
 
 
 
 
 
+
+def buscar_history():
+    conn = sq.connect(DB_PATH)
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT photo_frontal, data, tratamento FROM sessoes")
+
+    registros = cursor.fetchall()    
+    
+    return registros
 
 
 
@@ -61,5 +63,5 @@ def registrar_sessao(data,tratamento,photo_frontal,photo_entradas,photo_midscalp
     conn.commit()
     conn.close()
 
-
+print(buscar_history())
 

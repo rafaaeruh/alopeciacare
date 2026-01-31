@@ -1,4 +1,6 @@
 from flask import Blueprint, render_template, request
+from db.init_db import buscar_history
+
 
 history_bp = Blueprint("history", __name__,url_prefix="/history")
 flag = True
@@ -7,7 +9,8 @@ def history():
 
     global indice, flag
 
-    lista_de_frutas = ["Banana","Maçã","Kiwi","Uvas"]
+    sessoes_lista = buscar_history()
+
 
     if flag:
         indice = 3
@@ -22,7 +25,7 @@ def history():
                 indice -= 1
                 print(indice)
         elif request.form.get("acao") == "dir" :
-            if indice >= len(lista_de_frutas) + 1:
+            if indice >= len(sessoes_lista) + 1:
                 pass
             else:
                 indice += 1
@@ -32,4 +35,4 @@ def history():
 
 
 
-    return render_template("history.html", frutas = lista_de_frutas, index= indice) 
+    return render_template("history.html", sessoes = sessoes_lista, index= indice) 
